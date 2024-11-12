@@ -5,3 +5,10 @@ class Calculator:
         self.window = tk.Tk()
         self.window.geometry("375x667")
         self.window.title("Calculator")
+    
+    def run(self):
+        self.window.mainloop()
+
+if __name__ == "__main__":
+    calc = Calculator
+    calc.run
