@@ -36,6 +36,8 @@ class Calculator:
         self.buttons_frame = self.create_buttons_frame()
         self.create_digit_buttons()
 
+        self.buttons_frame.rowconfigure(0, weight=1)
+
         for x in range(1, 5):
             self.buttons_frame.rowconfigure(x, weight=1)
             self.buttons_frame.columnconfigure(x, weight=1 )
