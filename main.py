@@ -1,23 +1,30 @@
 import tkinter as tk
 
 Light_Gray = "F5F5F5"
+Label_Color = "25265E"
 
 class Calculator:
-    def __innit__(self):
+    def __init__(self):
         self.window = tk.Tk()
         self.window.geometry("375x667")
         self.window.title("Calculator")
         self.window.resizable(0,0)
 
+        self.totalexpression = "0"
+        self.currentexpression = "0"
+
         self.display_frame = self.create_display_frame
         self.buttons_frame = self.create_buttons_frame
     
+    def create_display_labels(self):
+        total_label = tk.Label(self.display_frame, text=self.totalexpression, anchor=tk.E, bg=Light_Gray, fg=Label_Color)
+
     def create_display_frame(self):
         frame = tk.Frame(self.window, height=221, bg=Light_Gray)
         frame.pack(expand=True, fill="both")
         return frame
     
-    def create_buttons_fram(self):
+    def create_buttons_frame(self):
         frame = tk.Frame(self.window)
         frame.pack(expand=True, fill="both")
         return frame
@@ -26,5 +33,5 @@ class Calculator:
         self.window.mainloop()
 
 if __name__ == "__main__":
-    calc = Calculator
+    calc = Calculator()
     calc.run()
